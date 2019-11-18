@@ -35,7 +35,7 @@ public class PictureController {
 	
 	@GetMapping("/pictures/{student_code}")
 	@ApiOperation(value = "Returns a Picture by Student Code")
-	public Picture getByStudentCode(@PathVariable(value = "student_code") String studentCode) {
+	public List<Picture> getByStudentCode(@PathVariable(value = "student_code") String studentCode) {
 		return pictureRepository.findByStudentCode(studentCode);
 	}
 	
