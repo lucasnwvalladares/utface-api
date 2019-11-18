@@ -4,8 +4,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.utface.apirest.models.Picture;
 
-public interface PictureRepository extends JpaRepository<Picture, Long> {
+public interface PictureRepository extends JpaRepository<Picture, String> {
 	
-	Picture findById(long id);
+	Picture findByStudentCode(String studentCode);
 
 }

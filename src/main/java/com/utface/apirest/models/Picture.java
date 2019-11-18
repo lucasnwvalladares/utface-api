@@ -19,6 +19,8 @@ public class Picture implements Serializable {
 	
 	private String url;
 	
+	private String studentCode;
+	
 	public long getId() {
 		return id;
 	}
@@ -33,5 +35,13 @@ public class Picture implements Serializable {
 	
 	public void setUrl(String url) {
 		this.url = url;
+	}
+
+	public String getStudentCode() {
+		return studentCode;
+	}
+
+	public void setStudentCode(String studentCode) {
+		this.studentCode = studentCode;
 	}
 }
