@@ -28,7 +28,7 @@ public class ClassX implements Serializable {
 	private String content;
 	
 	@OneToMany
-	private Collection<Student> students;
+	private Collection<StudentClass> studentClasses;
 
 	public long getId() {
 		return id;
@@ -70,11 +70,11 @@ public class ClassX implements Serializable {
 		this.content = content;
 	}
 
-	public Collection<Student> getStudents() {
-		return students;
+	public Collection<StudentClass> getStudentClasses() {
+		return studentClasses;
 	}
 
-	public void setStudents(Collection<Student> students) {
-		this.students = students;
+	public void setStudentClasses(Collection<StudentClass> studentClasses) {
+		this.studentClasses = studentClasses;
 	}
 }
