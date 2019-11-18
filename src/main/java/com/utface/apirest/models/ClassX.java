@@ -1,13 +1,11 @@
 package com.utface.apirest.models;
 
 import java.io.Serializable;
-import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -26,9 +24,6 @@ public class ClassX implements Serializable {
 	private String time;
 	
 	private String content;
-	
-	@OneToMany
-	private Collection<StudentClass> studentClasses;
 
 	public long getId() {
 		return id;
@@ -68,13 +63,5 @@ public class ClassX implements Serializable {
 
 	public void setContent(String content) {
 		this.content = content;
-	}
-
-	public Collection<StudentClass> getStudentClasses() {
-		return studentClasses;
-	}
-
-	public void setStudentClasses(Collection<StudentClass> studentClasses) {
-		this.studentClasses = studentClasses;
 	}
 }

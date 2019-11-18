@@ -25,9 +25,6 @@ public class Student implements Serializable {
 	
 	@OneToMany
 	private Collection<Picture> pictures;
-	
-	@OneToMany
-	private Collection<StudentClass> studentClasses;
 
 	public long getId() {
 		return id;
@@ -51,13 +48,5 @@ public class Student implements Serializable {
 
 	public void setPictures(Collection<Picture> pictures) {
 		this.pictures = pictures;
-	}
-
-	public Collection<StudentClass> getStudentClasses() {
-		return studentClasses;
-	}
-
-	public void setStudentClasses(Collection<StudentClass> studentClasses) {
-		this.studentClasses = studentClasses;
 	}
 }

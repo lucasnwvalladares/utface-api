@@ -21,7 +21,7 @@ public class StudentClass implements Serializable {
 	public Student student;
 	
 	@ManyToOne
-	@JoinColumn(name = "class_id", insertable = false, updatable = false)
+	@JoinColumn(name = "classx_id", insertable = false, updatable = false)
 	public ClassX classX;
 
 	public boolean presence;
