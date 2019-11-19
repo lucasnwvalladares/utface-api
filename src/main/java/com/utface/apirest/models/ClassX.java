@@ -29,7 +29,7 @@ public class ClassX implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name = "discipline_id", insertable = false, updatable = false)
-	private String discipline_id;
+	private Discipline discipline;
 
 	public long getId() {
 		return id;
@@ -71,11 +71,11 @@ public class ClassX implements Serializable {
 		this.content = content;
 	}
 
-	public String getDiscipline_id() {
-		return discipline_id;
+	public Discipline getDiscipline() {
+		return discipline;
 	}
 
-	public void setDiscipline_id(String discipline_id) {
-		this.discipline_id = discipline_id;
+	public void setDiscipline(Discipline discipline) {
+		this.discipline = discipline;
 	}
 }
