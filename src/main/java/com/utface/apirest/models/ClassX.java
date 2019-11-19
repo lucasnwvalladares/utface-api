@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,6 +26,10 @@ public class ClassX implements Serializable {
 	private String time;
 	
 	private String content;
+	
+	@ManyToOne
+	@JoinColumn(name = "discipline_id", insertable = false, updatable = false)
+	private String discipline_id;
 
 	public long getId() {
 		return id;
@@ -63,5 +69,13 @@ public class ClassX implements Serializable {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public String getDiscipline_id() {
+		return discipline_id;
+	}
+
+	public void setDiscipline_id(String discipline_id) {
+		this.discipline_id = discipline_id;
 	}
 }

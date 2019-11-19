@@ -33,10 +33,10 @@ public class ClassController {
 		return classRepository.findAll();
 	}
 	
-	@GetMapping("/classes/{id}")
-	@ApiOperation(value = "Returns Class by ID")
-	public ClassX getById(@PathVariable(value = "id") long id) {
-		return classRepository.findById(id);
+	@GetMapping("/classes/{discipline_code}")
+	@ApiOperation(value = "Returns Class by Discipline Code")
+	public List<ClassX> getByDisciplineCode(@PathVariable(value = "discipline_code") String disciplineCode) {
+		return classRepository.findByDisciplineCode(disciplineCode);
 	}
 	
 	@PostMapping("/classes")
