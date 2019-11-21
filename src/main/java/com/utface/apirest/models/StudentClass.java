@@ -8,6 +8,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name="student_class")
 public class StudentClass implements Serializable {
@@ -18,10 +20,12 @@ public class StudentClass implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name = "student_id", insertable = false, updatable = false)
+	@JsonBackReference
 	public Student student;
 	
 	@ManyToOne
 	@JoinColumn(name = "classx_id", insertable = false, updatable = false)
+	@JsonBackReference
 	public ClassX classX;
 
 	public boolean presence;
