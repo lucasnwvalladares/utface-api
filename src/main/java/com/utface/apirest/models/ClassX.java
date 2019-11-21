@@ -6,8 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -27,9 +25,7 @@ public class ClassX implements Serializable {
 	
 	private String content;
 	
-	@ManyToOne
-	@JoinColumn(name = "discipline_id", insertable = false, updatable = false)
-	private Discipline discipline;
+	private String disciplineCode;
 
 	public long getId() {
 		return id;
@@ -71,11 +67,11 @@ public class ClassX implements Serializable {
 		this.content = content;
 	}
 
-	public Discipline getDiscipline() {
-		return discipline;
+	public String getDisciplineCode() {
+		return disciplineCode;
 	}
 
-	public void setDiscipline(Discipline discipline) {
-		this.discipline = discipline;
+	public void setDisciplineCode(String disciplineCode) {
+		this.disciplineCode = disciplineCode;
 	}
 }
