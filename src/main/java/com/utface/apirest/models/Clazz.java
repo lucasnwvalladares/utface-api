@@ -2,7 +2,6 @@ package com.utface.apirest.models;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -21,7 +20,6 @@ public class Clazz implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name = "clazz_id", updatable = false)
 	private long id;
 	
 	private int quantity;
