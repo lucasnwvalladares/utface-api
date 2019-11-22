@@ -32,6 +32,8 @@ public class Clazz implements Serializable {
 	
 	private String disciplineCode;
 	
+	private Picture picture;
+	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumns({
 		@JoinColumn(name = "student_id", insertable = false, updatable = false),
@@ -85,6 +87,14 @@ public class Clazz implements Serializable {
 
 	public void setDisciplineCode(String disciplineCode) {
 		this.disciplineCode = disciplineCode;
+	}
+
+	public Picture getPicture() {
+		return picture;
+	}
+
+	public void setPicture(Picture picture) {
+		this.picture = picture;
 	}
 
 	public StudentClass getStudentClass() {
