@@ -22,7 +22,7 @@ public class StudentClass implements Serializable {
     private Student students;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@MapsId("classId")
+	@MapsId("clazzId")
     private Clazz classes;
 
 	public boolean presence;
