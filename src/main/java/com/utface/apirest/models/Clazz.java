@@ -1,7 +1,9 @@
 package com.utface.apirest.models;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -10,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -21,6 +24,13 @@ public class Clazz implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
+	
+	@OneToMany(
+			mappedBy = "classes",
+			cascade = CascadeType.ALL,
+			orphanRemoval = true
+	)
+    private List<StudentClass> studentClass;
 	
 	private int quantity;
 	
@@ -34,12 +44,7 @@ public class Clazz implements Serializable {
 	
 	private Picture picture;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumns({
-		@JoinColumn(name = "student_id", insertable = false, updatable = false),
-		@JoinColumn(name = "clazz_id", insertable = false, updatable = false)
-	})
-    private StudentClass studentClass;
+	
 
 	public long getId() {
 		return id;
@@ -97,11 +102,13 @@ public class Clazz implements Serializable {
 		this.picture = picture;
 	}
 
-	public StudentClass getStudentClass() {
+	public List<StudentClass> getStudentClass() {
 		return studentClass;
 	}
 
-	public void setStudentClass(StudentClass studentClass) {
+	public void setStudentClass(List<StudentClass> studentClass) {
 		this.studentClass = studentClass;
 	}
+
+	
 }
