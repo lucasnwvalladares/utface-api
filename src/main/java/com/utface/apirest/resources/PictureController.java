@@ -33,10 +33,10 @@ public class PictureController {
 		return pictureRepository.findAll();
 	}
 	
-	@GetMapping("/pictures/{student_code}")
-	@ApiOperation(value = "Returns a Picture by Student Code")
-	public List<Picture> getByStudentCode(@PathVariable(value = "student_code") String studentCode) {
-		return pictureRepository.findByStudentCode(studentCode);
+	@GetMapping("/pictures/{id}")
+	@ApiOperation(value = "Returns a Picture by ID")
+	public Picture getByStudentCode(@PathVariable(value = "id") long id) {
+		return pictureRepository.findById(id);
 	}
 	
 	@PostMapping("/pictures")
