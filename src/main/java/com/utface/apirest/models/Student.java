@@ -2,26 +2,19 @@ package com.utface.apirest.models;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-
 @Entity
 @Table(name="studens")
-@JsonIdentityInfo(
-		  generator = ObjectIdGenerators.PropertyGenerator.class,
-		  property = "id")
 public class Student implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
@@ -35,12 +28,11 @@ public class Student implements Serializable {
 	@OneToMany
 	private Collection<Picture> pictures;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumns({
-		@JoinColumn(name = "student_id", insertable = false, updatable = false),
-		@JoinColumn(name = "clazz_id", insertable = false, updatable = false)
-	})
-    private StudentClass studentClass;
+	@OneToMany(
+			mappedBy = "students",
+			cascade = CascadeType.ALL,
+			orphanRemoval = true)
+    private List<StudentClass> studentClass;
 
 	public long getId() {
 		return id;
@@ -66,11 +58,11 @@ public class Student implements Serializable {
 		this.pictures = pictures;
 	}
 
-	public StudentClass getStudentClass() {
+	public List<StudentClass> getStudentClass() {
 		return studentClass;
 	}
 
-	public void setStudentClass(StudentClass studentClass) {
+	public void setStudentClass(List<StudentClass> studentClass) {
 		this.studentClass = studentClass;
 	}
 }
