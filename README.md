@@ -1,3 +1,4 @@
+<html>
 <h4>
   UTFace - RESTful API
 <\h4>
@@ -15,3 +16,4 @@
 <h5>
   This application was documented by Swagger for better interaction.
 <\h5>
+<\html>
