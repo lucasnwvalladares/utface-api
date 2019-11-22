@@ -21,6 +21,7 @@ public class Student implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name = "student_id", updatable = false)
 	private long id;
 	
 	@Column(name = "student")
