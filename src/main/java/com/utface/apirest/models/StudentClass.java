@@ -1,14 +1,13 @@
 package com.utface.apirest.models;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table(name="student_class")
@@ -18,15 +17,11 @@ public class StudentClass implements Serializable {
 	@EmbeddedId
 	private StudentClassId id;
 	
-	@ManyToOne
-	@JoinColumn(name = "student_id", insertable = false, updatable = false)
-	@JsonBackReference
-	public Student student;
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "studentClass")
+    private List<Student> students;
 	
-	@ManyToOne
-	@JoinColumn(name = "classx_id", insertable = false, updatable = false)
-	@JsonBackReference
-	public ClassX classX;
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "studentClass")
+    private List<Clazz> classes;
 
 	public boolean presence;
 
@@ -37,28 +32,28 @@ public class StudentClass implements Serializable {
 	public void setId(StudentClassId id) {
 		this.id = id;
 	}
-
-	public Student getStudent() {
-		return student;
-	}
-
-	public void setStudent(Student student) {
-		this.student = student;
-	}
-
-	public ClassX getStudentClass() {
-		return classX;
-	}
-
-	public void setStudentClass(ClassX studentClass) {
-		this.classX = studentClass;
-	}
-
+	
 	public boolean isPresence() {
 		return presence;
 	}
 
 	public void setPresence(boolean presence) {
 		this.presence = presence;
+	}
+
+	public List<Student> getStudents() {
+		return students;
+	}
+
+	public void setStudents(List<Student> students) {
+		this.students = students;
+	}
+
+	public List<Clazz> getClazz() {
+		return classes;
+	}
+
+	public void setClazz(List<Clazz> clazz) {
+		this.classes = clazz;
 	}
 }

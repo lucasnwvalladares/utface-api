@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.utface.apirest.models.ClassX;
+import com.utface.apirest.models.Clazz;
 
-public interface ClassRepository extends JpaRepository<ClassX, String> {
+public interface ClassRepository extends JpaRepository<Clazz, String> {
 	
-	List<ClassX> findByDisciplineCode(String discipline_code);
+	List<Clazz> findByDisciplineCode(String discipline_code);
 
 }
