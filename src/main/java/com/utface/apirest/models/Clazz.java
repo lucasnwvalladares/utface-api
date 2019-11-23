@@ -5,16 +5,16 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
+
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
 
 @Entity
 @Table(name="classes")
@@ -30,7 +30,7 @@ public class Clazz implements Serializable {
 			cascade = CascadeType.ALL,
 			orphanRemoval = true
 	)
-    private List<StudentClass> studentClass;
+  private List<StudentClass> studentClass;
 	
 	private int quantity;
 	
@@ -43,8 +43,6 @@ public class Clazz implements Serializable {
 	private String disciplineCode;
 	
 	private Picture picture;
-	
-	
 
 	public long getId() {
 		return id;

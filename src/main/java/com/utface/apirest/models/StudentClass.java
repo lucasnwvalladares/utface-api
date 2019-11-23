@@ -1,13 +1,16 @@
 package com.utface.apirest.models;
 
 import java.io.Serializable;
+
 import java.util.List;
+
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.OneToMany;
+
 import javax.persistence.Table;
 
 @Entity
@@ -23,8 +26,8 @@ public class StudentClass implements Serializable {
     private Student students;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@MapsId("classId")
-    private Clazz classes;
+  @MapsId("clazzId")
+  private Clazz classes;
 
 	public boolean presence;
 
