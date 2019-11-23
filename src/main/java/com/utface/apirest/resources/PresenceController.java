@@ -35,7 +35,7 @@ public class PresenceController {
 	
 	@GetMapping("/presence/{student_code}")
 	@ApiOperation(value = "Returns a Presence by Student Code")
-	public Presence getById(@PathVariable(value = "student_code") String student_code) {
+	public List<Presence> getById(@PathVariable(value = "student_code") String student_code) {
 		return presenceRepository.findByStudentCode(student_code);
 	}
 	
