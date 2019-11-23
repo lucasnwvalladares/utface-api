@@ -20,6 +20,8 @@ public class Presence implements Serializable {
 	
 	private boolean presence;
 	
+	private Picture picture;
+	
 	@Column(name = "student_code")
 	private String studentCode;
 	
@@ -40,6 +42,14 @@ public class Presence implements Serializable {
 
 	public void setPresence(boolean presence) {
 		this.presence = presence;
+	}
+
+	public Picture getPicture() {
+		return picture;
+	}
+
+	public void setPicture(Picture picture) {
+		this.picture = picture;
 	}
 
 	public String getStudentCode() {
