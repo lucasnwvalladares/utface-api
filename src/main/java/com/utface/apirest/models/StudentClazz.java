@@ -22,12 +22,12 @@ public class StudentClazz implements Serializable {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@MapsId("student_id")
 	@JoinColumn(name = "student_id")
-    private Student students;
+    private Student student;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@MapsId("clazz_id")
 	@JoinColumn(name = "clazz_id")
-	private Clazz clazzes;
+	private Clazz clazz;
 
 	public boolean presence;
 
@@ -48,19 +48,19 @@ public class StudentClazz implements Serializable {
 	}	
 
 	public Student getStudents() {
-		return students;
+		return student;
 	}
 
-	public void setStudents(Student students) {
-		this.students = students;
+	public void setStudents(Student student) {
+		this.student = student;
 	}
 
 	public Clazz getClazzes() {
-		return clazzes;
+		return clazz;
 	}
 
-	public void setClasses(Clazz clazzes) {
-		this.clazzes = clazzes;
+	public void setClasses(Clazz clazz) {
+		this.clazz = clazz;
 	}
 	
 }

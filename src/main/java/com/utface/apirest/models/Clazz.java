@@ -20,7 +20,7 @@ public class Clazz implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
-	@OneToMany(mappedBy = "clazzes")
+	@OneToMany(mappedBy = "clazz")
 	private List<StudentClazz> studentClazz;
 	
 	private int quantity;

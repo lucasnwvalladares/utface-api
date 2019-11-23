@@ -27,7 +27,7 @@ public class Student implements Serializable {
 	@OneToMany
 	private Collection<Picture> pictures;
 	
-	@OneToMany(mappedBy = "students")
+	@OneToMany(mappedBy = "student")
     private List<StudentClazz> studentClazz;
 
 	public long getId() {
