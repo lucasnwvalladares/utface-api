@@ -3,6 +3,7 @@ package com.utface.apirest.models;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,6 +18,7 @@ public class Clazz implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@Column(name = "clazz_id")
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
