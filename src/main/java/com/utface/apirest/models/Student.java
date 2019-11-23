@@ -26,11 +26,6 @@ public class Student implements Serializable {
 	@OneToMany
 	private Collection<Picture> pictures;
 	
-	/**
-	@OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<StudentClazz> studentClazz;
-    */
-
 	public long getId() {
 		return id;
 	}
@@ -54,14 +49,4 @@ public class Student implements Serializable {
 	public void setPictures(Collection<Picture> pictures) {
 		this.pictures = pictures;
 	}
-  
-  	/**
-	public List<StudentClazz> getStudentClazz() {
-		return studentClazz;
-	}
-
-	public void setStudentClazz(List<StudentClazz> studentClazz) {
-		this.studentClazz = studentClazz;
-	}
-	*/
 }
