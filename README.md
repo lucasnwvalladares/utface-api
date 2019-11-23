@@ -1,5 +1,8 @@
 # UTFace - RESTful API
 
+* JAVA
+* SpringBoot
+
 ## This RESTful API has been developed with JAVA and SpringBoot for dependencies managing.
 
 ## This application has been deployed and hosted on Heroku Platform and can be accessed by clicking on the link below:
