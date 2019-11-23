@@ -13,8 +13,14 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 @Entity
-@Table(name="studens")
+@Table(name="students")
+@JsonIdentityInfo(
+		  generator = ObjectIdGenerators.PropertyGenerator.class, 
+		  property = "id")
 public class Student implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
@@ -31,7 +37,8 @@ public class Student implements Serializable {
 	@OneToMany(
 			mappedBy = "students",
 			cascade = CascadeType.ALL,
-			orphanRemoval = true)
+			orphanRemoval = true
+	)
     private List<StudentClass> studentClass;
 
 	public long getId() {
@@ -54,10 +61,10 @@ public class Student implements Serializable {
 		return pictures;
 	}
 
-	public void setPictures(Collection<Picture> pictures) {
+  public void setPictures(Collection<Picture> pictures) {
 		this.pictures = pictures;
 	}
-
+  
 	public List<StudentClass> getStudentClass() {
 		return studentClass;
 	}

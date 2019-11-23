@@ -8,6 +8,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
+import javax.persistence.ManyToOne;
+
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -20,6 +25,13 @@ public class Clazz implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
+	@OneToMany(
+			mappedBy = "classes",
+			cascade = CascadeType.ALL,
+			orphanRemoval = true
+	)
+  private List<StudentClass> studentClass;
+	
 	private int quantity;
 	
 	private String date;
@@ -31,13 +43,6 @@ public class Clazz implements Serializable {
 	private String disciplineCode;
 	
 	private Picture picture;
-	
-	@OneToMany(
-			mappedBy = "students",
-			cascade = CascadeType.ALL,
-			orphanRemoval = true
-	)
-    private List<StudentClass> studentClass;
 
 	public long getId() {
 		return id;
@@ -102,4 +107,6 @@ public class Clazz implements Serializable {
 	public void setStudentClass(List<StudentClass> studentClass) {
 		this.studentClass = studentClass;
 	}
+
+	
 }
