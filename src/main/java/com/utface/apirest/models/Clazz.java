@@ -3,6 +3,7 @@ package com.utface.apirest.models;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,7 +21,7 @@ public class Clazz implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
-	@OneToMany(mappedBy = "clazz")
+	@OneToMany(mappedBy = "clazz", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<StudentClazz> studentClazz;
 	
 	private int quantity;
