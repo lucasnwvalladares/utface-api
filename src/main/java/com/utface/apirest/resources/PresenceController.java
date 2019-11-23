@@ -38,12 +38,6 @@ public class PresenceController {
 	public Presence getById(@PathVariable(value = "student_code") String student_code) {
 		return presenceRepository.findByStudentCode(student_code);
 	}
-
-	@GetMapping("/presence/{clazz_id}")
-	@ApiOperation(value = "Returns a Presence by Clazz ID")
-	public Presence getByClazzId(@PathVariable(value = "clazz_id") String clazz_id) {
-		return presenceRepository.findByClazzId(clazz_id);
-	}
 	
 	@PostMapping("/presence")
 	@ApiOperation(value = "Creates a new Presence")

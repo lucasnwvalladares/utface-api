@@ -6,5 +6,4 @@ import com.utface.apirest.models.Presence;
 
 public interface PresenceRepository extends JpaRepository<Presence, String> {
 	Presence findByStudentCode(String student_code);
-	Presence findByClazzId(String clazz_id);
 }
