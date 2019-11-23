@@ -10,3 +10,7 @@
 ###### https://utface-api.herokuapp.com/swagger-ui.html
 
 ## This application was documented by Swagger for better interaction.
+
+## Link do YouTube demonstrando o funcionamento da API:
+
+###### https://www.youtube.com/watch?v=hJvJALieKfM
