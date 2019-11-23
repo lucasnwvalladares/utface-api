@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 
@@ -19,12 +20,14 @@ public class StudentClass implements Serializable {
 	private StudentClassId id;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@MapsId("studentId")
+	@MapsId("student_id")
+	@JoinColumn(name = "student_id")
     private Student students;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-  @MapsId("clazzId")
-  private Clazz classes;
+	@MapsId("clazz_id")
+	@JoinColumn(name = "clazz_id")
+	private Clazz classes;
 
 	public boolean presence;
 

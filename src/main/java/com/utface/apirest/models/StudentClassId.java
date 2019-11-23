@@ -8,21 +8,14 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class StudentClassId implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
 
 	@Column(name = "student_id")
     private Long studentId;
  
-    @Column(name = "class_id")
-    private Long classId;
- 
-    @SuppressWarnings("unused")
-	private StudentClassId() {}
- 
-    public StudentClassId(Long studentId, Long classId) {
-        this.studentId = studentId;
-        this.classId = classId;
-    }
+    @Column(name = "clazz_id")
+    private Long clazzId;
  
     //Getters omitted for brevity
  
@@ -35,11 +28,11 @@ public class StudentClassId implements Serializable {
  
         StudentClassId that = (StudentClassId) o;
         return Objects.equals(studentId, that.studentId) &&
-               Objects.equals(classId, that.classId);
+               Objects.equals(clazzId, that.clazzId);
     }
  
     @Override
     public int hashCode() {
-        return Objects.hash(studentId, classId);
+        return Objects.hash(studentId, clazzId);
     }
 }
