@@ -2,9 +2,7 @@ package com.utface.apirest.models;
 
 import java.io.Serializable;
 import java.util.Collection;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,8 +26,10 @@ public class Student implements Serializable {
 	@OneToMany
 	private Collection<Picture> pictures;
 	
+	/**
 	@OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<StudentClazz> studentClazz;
+    */
 
 	public long getId() {
 		return id;
@@ -51,10 +51,11 @@ public class Student implements Serializable {
 		return pictures;
 	}
 
-  public void setPictures(Collection<Picture> pictures) {
+	public void setPictures(Collection<Picture> pictures) {
 		this.pictures = pictures;
 	}
   
+  	/**
 	public List<StudentClazz> getStudentClazz() {
 		return studentClazz;
 	}
@@ -62,4 +63,5 @@ public class Student implements Serializable {
 	public void setStudentClazz(List<StudentClazz> studentClazz) {
 		this.studentClazz = studentClazz;
 	}
+	*/
 }
