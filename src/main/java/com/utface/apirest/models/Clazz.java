@@ -18,11 +18,6 @@ public class Clazz implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
-	/**
-	@OneToMany(mappedBy = "clazz", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<StudentClazz> studentClazz;
-	*/
-	
 	private int quantity;
 	
 	private String date;
@@ -90,15 +85,4 @@ public class Clazz implements Serializable {
 	public void setPicture(Picture picture) {
 		this.picture = picture;
 	}
-
-	/**
-	public List<StudentClazz> getStudentClazz() {
-		return studentClazz;
-	}
-
-	public void setStudentClazz(List<StudentClazz> studentClazz) {
-		this.studentClazz = studentClazz;
-	}
-	*/
-	
 }

@@ -26,16 +26,6 @@ public class StudentClazz implements Serializable {
 	@Column(name = "clazz_id")
 	private String clazzId;
 	
-	/**@ManyToOne(fetch = FetchType.LAZY)
-	@MapsId("studentId")
-	@JoinColumn(name = "student_id")
-    private Student student;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@MapsId("clazzId")
-	@JoinColumn(name = "clazz_id")
-	private Clazz clazz;*/
-
 	public long getId() {
 		return id;
 	}
@@ -67,20 +57,4 @@ public class StudentClazz implements Serializable {
 	public void setClazzId(String clazzId) {
 		this.clazzId = clazzId;
 	}
-
-	/**public Student getStudent() {
-		return student;
-	}
-
-	public void setStudent(Student student) {
-		this.student = student;
-	}
-
-	public Clazz getClazz() {
-		return clazz;
-	}
-
-	public void setClazz(Clazz clazz) {
-		this.clazz = clazz;
-	}*/
 }
