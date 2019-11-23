@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.utface.apirest.models.Clazz;
 
-public interface ClassRepository extends JpaRepository<Clazz, String> {
+public interface ClazzRepository extends JpaRepository<Clazz, String> {
 	
 	List<Clazz> findByDisciplineCode(String discipline_code);
 

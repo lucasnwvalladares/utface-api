@@ -28,7 +28,7 @@ public class Student implements Serializable {
 	private Collection<Picture> pictures;
 	
 	@OneToMany(mappedBy = "students")
-    private List<StudentClass> studentClass;
+    private List<StudentClazz> studentClazz;
 
 	public long getId() {
 		return id;
@@ -54,11 +54,11 @@ public class Student implements Serializable {
 		this.pictures = pictures;
 	}
   
-	public List<StudentClass> getStudentClass() {
-		return studentClass;
+	public List<StudentClazz> getStudentClazz() {
+		return studentClazz;
 	}
 
-	public void setStudentClass(List<StudentClass> studentClass) {
-		this.studentClass = studentClass;
+	public void setStudentClazz(List<StudentClazz> studentClazz) {
+		this.studentClazz = studentClazz;
 	}
 }

@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.utface.apirest.models.StudentClass;
-import com.utface.apirest.repository.StudentClassRepository;
+import com.utface.apirest.models.StudentClazz;
+import com.utface.apirest.repository.StudentClazzRepository;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -23,37 +23,37 @@ import io.swagger.annotations.ApiOperation;
 @RequestMapping(value = "/api")
 @Api(value = "UTFace - REST API")
 @CrossOrigin(origins = "*")
-public class StudentClassController {
+public class StudentClazzController {
 	@Autowired
-	StudentClassRepository studentClassRepository;
+	StudentClazzRepository studentClazzRepository;
 	
-	@GetMapping("/studentclass")
+	@GetMapping("/studentclazz")
 	@ApiOperation(value = "Returns a list of StudentClass")
-	public List<StudentClass> getAll() {
-		return studentClassRepository.findAll();
+	public List<StudentClazz> getAll() {
+		return studentClazzRepository.findAll();
 	}
 	
-	@GetMapping("/studentclass/{id}")
+	@GetMapping("/studentclazz/{id}")
 	@ApiOperation(value = "Returns a StudentClass by ID")
-	public StudentClass getById(@PathVariable(value = "id") long id) {
-		return studentClassRepository.findById(id);
+	public StudentClazz getById(@PathVariable(value = "id") long id) {
+		return studentClazzRepository.findById(id);
 	}
 	
-	@PostMapping("/studentclass")
+	@PostMapping("/studentclazz")
 	@ApiOperation(value = "Creates a new StudentClass")
-	public StudentClass create(@RequestBody StudentClass studentClass) {
-		return studentClassRepository.save(studentClass);
+	public StudentClazz create(@RequestBody StudentClazz studentClazz) {
+		return studentClazzRepository.save(studentClazz);
 	}
 	
-	@PutMapping("/studentclass")
+	@PutMapping("/studentclazz")
 	@ApiOperation(value = "Updates a StudentClass")
-	public StudentClass update(@RequestBody StudentClass studentClass) {
-		return studentClassRepository.save(studentClass);
+	public StudentClazz update(@RequestBody StudentClazz studentClazz) {
+		return studentClazzRepository.save(studentClazz);
 	}
 	
-	@DeleteMapping("/studentclass")
+	@DeleteMapping("/studentclazz")
 	@ApiOperation(value = "Deletes a StudentClass")
-	public void delete(@RequestBody StudentClass studentClass) {
-		studentClassRepository.delete(studentClass);
+	public void delete(@RequestBody StudentClazz studentClazz) {
+		studentClazzRepository.delete(studentClazz);
 	}
 }

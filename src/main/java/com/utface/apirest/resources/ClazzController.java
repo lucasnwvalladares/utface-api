@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.utface.apirest.models.Clazz;
-import com.utface.apirest.repository.ClassRepository;
+import com.utface.apirest.repository.ClazzRepository;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -23,37 +23,37 @@ import io.swagger.annotations.ApiOperation;
 @RequestMapping(value = "/api")
 @Api(value = "UTFace - REST API")
 @CrossOrigin(origins = "*")
-public class ClassController {
+public class ClazzController {
 	@Autowired
-	ClassRepository classRepository;
+	ClazzRepository clazzRepository;
 	
-	@GetMapping("/classes")
+	@GetMapping("/clazzes")
 	@ApiOperation(value = "Returns a list os Classes")
 	public List<Clazz> getAll() {
-		return classRepository.findAll();
+		return clazzRepository.findAll();
 	}
 	
-	@GetMapping("/classes/{discipline_code}")
+	@GetMapping("/clazzes/{discipline_code}")
 	@ApiOperation(value = "Returns Class by Discipline Code")
 	public List<Clazz> getByDisciplineCode(@PathVariable(value = "discipline_code") String disciplineCode) {
-		return classRepository.findByDisciplineCode(disciplineCode);
+		return clazzRepository.findByDisciplineCode(disciplineCode);
 	}
 	
-	@PostMapping("/classes")
+	@PostMapping("/clazzes")
 	@ApiOperation(value = "Creates a new Class")
 	public Clazz create(@RequestBody Clazz clazz) {
-		return classRepository.save(clazz);
+		return clazzRepository.save(clazz);
 	}
 	
-	@PutMapping("/classes")
+	@PutMapping("/clazzes")
 	@ApiOperation(value = "Updates a Class")
 	public Clazz update(@RequestBody Clazz clazz) {
-		return classRepository.save(clazz);
+		return clazzRepository.save(clazz);
 	}
 	
-	@DeleteMapping("/classes")
+	@DeleteMapping("/clazzes")
 	@ApiOperation(value = "Deletes a Class")
 	public void delete(@RequestBody Clazz clazz) {
-		classRepository.delete(clazz);
+		clazzRepository.delete(clazz);
 	}
 }

@@ -7,7 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class StudentClassId implements Serializable {
+public class StudentClazzId implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -26,7 +26,7 @@ public class StudentClassId implements Serializable {
         if (o == null || getClass() != o.getClass())
             return false;
  
-        StudentClassId that = (StudentClassId) o;
+        StudentClazzId that = (StudentClazzId) o;
         return Objects.equals(studentId, that.studentId) &&
                Objects.equals(clazzId, that.clazzId);
     }

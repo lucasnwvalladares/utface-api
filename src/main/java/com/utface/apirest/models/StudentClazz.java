@@ -12,12 +12,12 @@ import javax.persistence.MapsId;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="student_class")
-public class StudentClass implements Serializable {
+@Table(name="student_clazz")
+public class StudentClazz implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@EmbeddedId
-	private StudentClassId id;
+	private StudentClazzId id;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@MapsId("student_id")
@@ -27,15 +27,15 @@ public class StudentClass implements Serializable {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@MapsId("clazz_id")
 	@JoinColumn(name = "clazz_id")
-	private Clazz classes;
+	private Clazz clazzes;
 
 	public boolean presence;
 
-	public StudentClassId getId() {
+	public StudentClazzId getId() {
 		return id;
 	}
 
-	public void setId(StudentClassId id) {
+	public void setId(StudentClazzId id) {
 		this.id = id;
 	}
 	
@@ -55,12 +55,12 @@ public class StudentClass implements Serializable {
 		this.students = students;
 	}
 
-	public Clazz getClasses() {
-		return classes;
+	public Clazz getClazzes() {
+		return clazzes;
 	}
 
-	public void setClasses(Clazz classes) {
-		this.classes = classes;
+	public void setClasses(Clazz clazzes) {
+		this.clazzes = clazzes;
 	}
 	
 }

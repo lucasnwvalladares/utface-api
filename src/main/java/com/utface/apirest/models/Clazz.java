@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="classes")
+@Table(name="clazzes")
 public class Clazz implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -20,8 +20,8 @@ public class Clazz implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
-	@OneToMany(mappedBy = "classes")
-	private List<StudentClass> studentClass;
+	@OneToMany(mappedBy = "clazzes")
+	private List<StudentClazz> studentClazz;
 	
 	private int quantity;
 	
@@ -91,12 +91,12 @@ public class Clazz implements Serializable {
 		this.picture = picture;
 	}
 
-	public List<StudentClass> getStudentClass() {
-		return studentClass;
+	public List<StudentClazz> getStudentClazz() {
+		return studentClazz;
 	}
 
-	public void setStudentClass(List<StudentClass> studentClass) {
-		this.studentClass = studentClass;
+	public void setStudentClazz(List<StudentClazz> studentClazz) {
+		this.studentClazz = studentClazz;
 	}
 
 	
